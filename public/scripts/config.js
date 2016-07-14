@@ -3,8 +3,7 @@ require.config({
     angular: '../lib/angular/angular',
     angularRoute: '../lib/angular-route/angular-route',
     main: 'main',
-    indexController: 'index-controller',
-    indexFormController: 'indexFormController'
+    index: 'index'
   },
   shim: {
     angular: {
@@ -17,9 +16,10 @@ require.config({
 });
 
 require(["angularRoute"], function() {
-  require(['main', 'indexController', 'indexFormController'], function(myModule, indexController, indexFormController) {
-    myModule.controller('indexController', ['$scope', '$mdSidenav', '$location', indexController]);
-    myModule.controller('indexFormController', ['$scope', indexFormController]);
+  require(['main', 'indexController', 'homeController', 'myDirective'], function(myModule, indexController, homeController, myDirective) {
+    myModule.controller('indexController', ['$scope', indexController]);
+    myModule.controller('homeController', ['$scope', homeController]);
+    myModule.directive('myDirective', myDirective);
     angular.bootstrap(document, ['myModule']);
   });
 });

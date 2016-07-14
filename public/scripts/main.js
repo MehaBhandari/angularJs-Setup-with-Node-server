@@ -11,11 +11,7 @@ define('main', [], function(angular) {
   myModule.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider.when('/', {
       templateUrl: 'index/index.vash',
-      controller: 'indexFormController',
-      controllerAs: 'index'
-    }).when('/new', {
-      templateUrl: 'index/new.vash',
-      controller: 'indexFormController',
+      controller: 'indexController',
       controllerAs: 'index'
     }).otherwise({
       redirectTo: '/'

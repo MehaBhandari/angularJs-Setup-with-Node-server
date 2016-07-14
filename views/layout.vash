@@ -13,35 +13,14 @@
   <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
 
   </head>
-  <body ng-controller="indexController">
-    <div>
-      <div layout="row" max-height="100%" max-width="100%" style="background-color: #e4e3e3;">
-        <md-sidenav md-component-id="left" class="md-sidenav-left">
-          <md-list flex>
-            <md-list-item class="md-3-line" style="height: 60px;" ng-click="redirectPage('/')">
-              <a class="md-list-item-text" layout="column">
-                <h3>Employee Engagement Form</h3>
-              </a>
-            </md-list-item>
-            <md-divider ></md-divider>
-            <md-list-item class="md-3-line" style="height: 60px;" ng-click="redirectPage('/new')">
-              <a class="md-list-item-text" layout="column">
-                <h3>Employee Attendence Form</h3>
-              </a>
-            </md-list-item>
-          </md-list>
-        </md-sidenav>
-        <md-content flex layout-padding layout="row">
+  <body ng-controller="homeController">
 
-          <ng-md-icon icon="done" class="expandMenu" size="48" ng-click="openLeftMenu()">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48">
-              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"></path>
-            </svg>
-          </ng-md-icon>
-
-          <div ng-view style="width: 100%"></ng-view>
-        </md-content>
+      <div style="padding: 20px; border: 5px solid red; margin: 20px;">
+        This is Layout Controller
+        <input type="text" ng-model="myData.Name" />
+        <div ng-view style="width: 100%"></ng-view>
       </div>
+
     </div>
   </body>
 </html>
