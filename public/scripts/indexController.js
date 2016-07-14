@@ -1,6 +1,9 @@
 define('indexController', [], function() {
   var indexController = function($scope) {
-	  this.containerName = "Index";
+	  $scope.containerName = "Index";
+    $scope.myData = {
+      Name: "Mayank"
+    }
   }
   return indexController;
 });
