@@ -1,9 +1,16 @@
-define('indexController', [], function() {
+
   var indexController = function($scope) {
-	  $scope.containerName = "Index";
-    $scope.myData = {
-      Name: "Mayank"
-    }
+    
+    $scope.userName = "Mayank";
+    
+    $scope.usersInfo = [{
+      userName: "Mayank",
+      designation: "Developer"
+    }, {
+      userName: "Meha",
+      designation: "Developer"
+    }, {
+      userName: "Anshul",
+      designation: "Developer"
+    }]
   }
-  return indexController;
-});

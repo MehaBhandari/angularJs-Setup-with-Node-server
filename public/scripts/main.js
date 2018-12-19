@@ -1,16 +1,14 @@
-define('main', [], function(angular) {
 
-  var angular = require("angular");
-  var myModule = angular.module("myModule", ['ngRoute', 'ngMaterial']).config(function($mdThemingProvider) {
-    // Configure a dark theme with primary foreground yellow
-    $mdThemingProvider.theme('docs-dark', 'default')
-      .primaryPalette('yellow')
-      .dark();
-  });
+  var myModule = angular.module("myModule", ['ngRoute']);
 
+  myModule.controller('indexController', ['$scope', indexController]);
+  
   myModule.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider.when('/', {
       templateUrl: 'index/index.vash',
+      controller: 'indexController'
+    }).when('/other', {
+      templateUrl: 'index/other.vash',
       controller: 'indexController'
     }).otherwise({
       redirectTo: '/'
@@ -23,6 +21,4 @@ define('main', [], function(angular) {
 
   }]);
 
-  return myModule;
-
-});
+  angular.bootstrap(document, ['myModule']);
