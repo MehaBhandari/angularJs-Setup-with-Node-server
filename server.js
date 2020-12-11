@@ -10,16 +10,22 @@ var vash = require('vash');
 // Express is initialized to carry ot routing process
 var app = express();
 
-app.set("view engine", "vash");
-
-app.use(express.static(__dirname + '/public'));
-
-var controller = require("./controller");
-
-controller.init(app);
-
 // Server is created and express is used as a middleware to configure the routes
 var server = http.createServer(app);
 
-// Apllication is made to listen Http request at port 3000
-app.listen(3000);
+//app.set("view engine", "vash");
+app.set('views', './views');
+app.set('view engine', 'ejs')
+
+app.use(express.static(__dirname + '/public'));
+
+var routeController = require("./controller/routeController");
+
+routeController.initializeRouting(app);
+
+var dataController = require('./controller/dataController');
+dataController.userDataArr(app);
+
+// Apllication is made to listen Http request at port 8080
+app.listen(8080);
+
